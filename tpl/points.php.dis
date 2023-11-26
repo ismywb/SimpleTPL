@@ -1,0 +1,160 @@
+<?php
+$tpl = '<h1>Voting Points</h1><table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">Imposter</th>
+      <th scope="col">Crew</th>
+      <th scope="col">Neutral</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Vote Crewmate</th>
+      <td>0</td>
+      <td>'.\Tournaments\Round::$CrewVote.'</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">Eject Crewmate</th>
+      <td>0</td>
+      <td>'.\Tournaments\Round::$CrewEjection.'</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">Vote Imposter</th>
+      <td>0</td>
+      <td>'.\Tournaments\Round::$ImpVote.'</td>
+      <td>'.\Tournaments\Round::$ImpVote.'</td>
+    </tr>
+    <tr>
+      <th scope="row">Eject Imposter</th>
+      <td>0</td>
+      <td>'.\Tournaments\Round::$ImpEjection.'</td>
+      <td>'.\Tournaments\Round::$ImpEjection.'</td>
+    </tr>
+    <tr>
+      <th scope="row">Kill</th>
+      <td>'.\Tournaments\Round::$ImpKillPoints.'</td>
+      <td>'.\Tournaments\Round::$ImpKillPoints.'</td>
+      <td>'.\Tournaments\Round::$ImpKillPoints.'</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>Win Points</h1><table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">&nbsp;</th>
+      <th scope="col">Imposter</th>
+      <th scope="col">Crew</th>
+      <th scope="col">Nutral</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Imposter Win</th>
+      <td>'.\Tournaments\Round::$ImpWinPoints.'</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">Sabatoge Win</th>
+      <td>'.\Tournaments\Round::$ImpSaboBonus.'</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">Crew Win</th>
+      <td>0</td>
+      <td>'.\Tournaments\Round::$CrewWin.'</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">Task Win</th>
+      <td>0</td>
+      <td>'.\Tournaments\Round::$CrewTaskWin.'</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th scope="row">Tasks Done</th>
+      <td>0</td>
+      <td>'.\Tournaments\Round::$crewTasksDone.'</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>Neutral Win</h1><table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Role</th>
+      <th scope="col">Win Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Jester</th>
+      <td>1 Point per vote, not including self vote. +5 points for being ejected.</td>
+    </tr>
+    <tr>
+      <th scope="row">Arsonist</th>
+      <td>5 points for winning, plus '.\Tournaments\Round::$ImpKillPoints.' points for every person alive at the start of the round (excluding self)</td>
+    </tr>
+    <tr>
+      <th scope="row">Vulture</th>
+      <td>'.\Tournaments\Round::$ImpKillPoints.' points for winning, plus '.\Tournaments\Round::$ImpKillPoints.' for every body eaten.</td>
+    </tr>
+    <tr>
+      <th scope="row">Pluage Doctor</th>
+      <td>5 points for winning, plus '.(\Tournaments\Round::$ImpKillPoints/2).' points for every person infected and alive.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>Special Points</h1><table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Role</th>
+      <th scope="col">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Engineer</th>
+      <td>2 Points for fixing life threatening Sabbotage</td>
+    </tr>
+    <tr>
+      <th scope="row">Lover</th>
+      <td>7 Points to each lover for winning <i>as a lover</i></td>
+    </tr>
+    <tr>
+      <th scope="row">Sheriff</th>
+      <td>3 points per kill</td>
+    </tr>
+    <tr>
+      <th scope="row">Guesser</th>
+      <td>3 points per correct guess</td>
+    </tr>
+    <tr>
+      <th scope="row">Janitor</th>
+      <td>4 points per clean</td>
+    </tr>
+    <tr>
+      <th scope="row">Security Guard</th>
+      <td>3 points for using all screws.</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">Glitch</th>
+      <td>3 Points per Kill, +5 for winning</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">Executioner</th>
+      <td>5 points for winning, 1 point per vote on your target that isn\'t yours.</td>
+    </tr>
+    
+  </tbody>
+</table>';
+$__output = $tpl;
