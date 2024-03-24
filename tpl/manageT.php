@@ -11,7 +11,7 @@ if ($_REQUEST['do'] == 'toggle') {
            $t->Save();
        } catch (\Exceptions\ItemNotFound $e) {}
     }
-    header("Location: /manageT.html");
+    header("Location: ./manageT.html");
     die;
 }
 
@@ -42,11 +42,11 @@ $date = $data[2].'/'.$data[0].'/'.$data[1];
 
     $tpl  .= <<<end
     <tr>
-      <td><a href="/modify.html?tid={$t->id}&flag=removeT&confirm=0"><img src="//static.scumscyb.org/img/redminus.png" class="icon" /></a> {$t->id}</td>
+      <td><a href="./modify.html?tid={$t->id}&flag=removeT&confirm=0"><img src="/img/redminus.png" class="icon" /></a> {$t->id}</td>
       <td>{$t->name}</td>
       <td>{$date}</td>
-      <td><a href="/manageT.html?tid={$t->id}&do=toggle&on=public">{$t->isPublic()}</a></td>
-      <td><a href="/round.html?tid={$t->id}">Rounds</a></td>
+      <td><a href="./manageT.html?tid={$t->id}&do=toggle&on=public">{$t->isPublic()}</a></td>
+      <td><a href="./round.html?tid={$t->id}">Rounds</a></td>
     </tr>
 end;
 }
@@ -63,7 +63,7 @@ $tpl .= <<<end
 end;
 $tDate = date("m/d/Y");
     $tpl .= <<<end
-<form action="/manageT.html" method="post">
+<form action="./manageT.html" method="post">
   <div class="form-group">
   <input type="hidden" name="create" value="1" />
           <label for="date">Date</label>

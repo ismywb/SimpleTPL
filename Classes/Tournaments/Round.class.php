@@ -18,9 +18,9 @@ class Round  extends \Database\Base {
     public function isCrew($img = 1) {
         if ($img == 1) {
             if ($this->is_crew == 1) {
-                return '<img class="icon" src="//static.scumscyb.org/img/yes.png" />';
+                return '<img class="icon" src="/img/yes.png" />';
             } else {
-                return '<img class="icon" src="//static.scumscyb.org/img/none.png" />';
+                return '<img class="icon" src="/img/none.png" />';
             }
         } else {
             if ($this->is_crew == 1) {
@@ -35,9 +35,9 @@ class Round  extends \Database\Base {
         
         if ($img == 1) {
             if ($this->is_crew == 0) {
-                return '<img class="icon" src="//static.scumscyb.org/img/yes.png" />';
+                return '<img class="icon" src="/img/yes.png" />';
             } else {
-                return '<img class="icon" src="//static.scumscyb.org/img/none.png" />';
+                return '<img class="icon" src="/img/none.png" />';
             }
         } else {
             if ($this->is_crew == 0) {
@@ -52,9 +52,9 @@ class Round  extends \Database\Base {
         
         if ($img == 1) {
             if ($this->is_crew == 2) {
-                return '<img class="icon" src="//static.scumscyb.org/img/yes.png" />';
+                return '<img class="icon" src="/img/yes.png" />';
             } else {
-                return '<img class="icon" src="//static.scumscyb.org/img/none.png" />';
+                return '<img class="icon" src="/img/none.png" />';
             }
         } else {
             if ($this->is_crew == 2) {
@@ -66,8 +66,8 @@ class Round  extends \Database\Base {
     }
     
     public function tasksDone() {
-        if ($this->tasks_done) return '<img class="icon" src="//static.scumscyb.org/img/yes.png" />';
-        else return '<img class="icon" src="//static.scumscyb.org/img/none.png" />';
+        if ($this->tasks_done) return '<img class="icon" src="/img/yes.png" />';
+        else return '<img class="icon" src="/img/none.png" />';
     }
     
     function flipBitwise($a) {

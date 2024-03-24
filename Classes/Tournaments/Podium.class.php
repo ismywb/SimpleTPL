@@ -11,10 +11,10 @@ class Podium extends \Database\Base {
     public function first() {
         $out = '<p style="display: none;">'.$this->first.'</p>';
         for ($i = 0; $i < $this->first; $i++) {
-            $out .= "&nbsp;<img class='podium-icon' src='//static.scumscyb.org/img/first.png' />";
+            $out .= "&nbsp;<img class='podium-icon' src='/img/first.png' />";
         }
         if ($this->first == 0) {
-            $out .= "&nbsp;<img class='podium-icon' src='//static.scumscyb.org/img/none.png' />";
+            $out .= "&nbsp;<img class='podium-icon' src='/img/none.png' />";
         }
         return $out;
     }
@@ -22,10 +22,10 @@ class Podium extends \Database\Base {
     public function second() {
         $out = '<p style="display: none;">'.$this->second.'</p>';
         for ($i = 0; $i < $this->second; $i++) {
-            $out .= "&nbsp;<img class='podium-icon' src='//static.scumscyb.org/img/second.png' />";
+            $out .= "&nbsp;<img class='podium-icon' src='/img/second.png' />";
         }
         if ($this->second == 0) {
-            $out .= "&nbsp;<img class='podium-icon' src='//static.scumscyb.org/img/none.png' />";
+            $out .= "&nbsp;<img class='podium-icon' src='/img/none.png' />";
         }
         return $out;
     }
@@ -33,10 +33,10 @@ class Podium extends \Database\Base {
     public function third() {
         $out = '<p style="display: none;">'.$this->third.'</p>';
         for ($i = 0; $i < $this->third; $i++) {
-            $out .= "&nbsp;<img class='podium-icon' src='//static.scumscyb.org/img/third.png' />";
+            $out .= "&nbsp;<img class='podium-icon' src='/img/third.png' />";
         }
         if ($this->third == 0) {
-            $out .= "&nbsp;<img class='podium-icon' src='//static.scumscyb.org/img/none.png' />";
+            $out .= "&nbsp;<img class='podium-icon' src='/img/none.png' />";
         }
         return $out;
     }

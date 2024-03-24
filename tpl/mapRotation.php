@@ -20,6 +20,7 @@ $tpl = '<h1>Map Rotation</h1><table class="table table-bordered"><thead><th>Map<
 
 $maps = array('Skeld','Mira','Polus','Airship');
 if (isset($_GET['sub'])) $maps[] = 'Submerged';
+if (isset($_GET['fun'])) $maps[] = 'Fungle';
 $numDone = 0;
 while ($numDone < $total_matches) {
   if (count($maps) > 1) {

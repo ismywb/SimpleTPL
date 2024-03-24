@@ -50,15 +50,15 @@ foreach ($players as $player) {
     $tpl .= '<tr>
 		<td>'.$player->name.'</td>
 		<td>
-			<a href="addWin.html?pid='.$player->id.'&add=1">Add First ('.$player->first.')</a>
-			 (<a href="addWin.html?pid='.$player->id.'&del=1">Del</a>)
+			<a href="./addWin.html?pid='.$player->id.'&add=1">Add First ('.$player->first.')</a>
+			 (<a href="./addWin.html?pid='.$player->id.'&del=1">Del</a>)
 		</td>
 		<td>
-			<a href="addWin.html?pid='.$player->id.'&add=2">Add Second ('.$player->second.')</a>
-			 (<a href="addWin.html?pid='.$player->id.'&del=2">Del</a>)</td>
+			<a href="./addWin.html?pid='.$player->id.'&add=2">Add Second ('.$player->second.')</a>
+			 (<a href="./addWin.html?pid='.$player->id.'&del=2">Del</a>)</td>
 		<td>
-			<a href="addWin.html?pid='.$player->id.'&add=3">Add Third ('.$player->third.')</a>
-			 (<a href="addWin.html?pid='.$player->id.'&del=3">Del</a>)
+			<a href="./addWin.html?pid='.$player->id.'&add=3">Add Third ('.$player->third.')</a>
+			 (<a href="./addWin.html?pid='.$player->id.'&del=3">Del</a>)
 		</td></tr>';
 }
 $tpl .= '</table>';

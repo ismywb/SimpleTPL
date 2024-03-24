@@ -12,7 +12,7 @@ $err = '';
 if (defined('CREATED')) $err = "Modpack Successfully created!";
 $tpl = <<<end
 {$err}
-<form action="/createMod.html" method="post">
+<form action="./createMod.html" method="post">
   <div class="form-group">
   <input type="hidden" name="create" value="1" />
           <label for="date">Mod Name</label>

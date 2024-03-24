@@ -41,6 +41,11 @@ class User extends \Database\Base {
         }
     }
     
+    public function active() {
+        if ($this->active == 1) return '<img class="icon" src="/img/yes.png" />';
+        else return '<img class="icon" src="/img/none.png" />';
+    }
+
     public static function getCurrent() {
         if (!self::validateCookie()) {
             return false;

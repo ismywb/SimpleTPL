@@ -28,7 +28,7 @@ $date = $data[2].'/'.$data[0].'/'.$data[1];
           <td>{$t->id}</td>
           <td>{$t->name}</td>
           <td>{$date}</td>
-          <td><a href="/viewtournament.html?tid={$t->id}">Rounds</a></td>
+          <td><a href="./viewtournament.html?tid={$t->id}">Rounds</a></td>
         </tr>
 end;
     }

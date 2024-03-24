@@ -18,7 +18,7 @@ try {
         <tr>
           <td>{$t->id}</td>
           <td>{$t->name}</td>
-          <td><a href="/viewRoles.html?mid={$t->id}">View Roles</a></td>
+          <td><a href="./viewRoles.html?mid={$t->id}">View Roles</a></td>
         </tr>
 end;
     }

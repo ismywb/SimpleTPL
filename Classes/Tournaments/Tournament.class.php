@@ -51,8 +51,8 @@ class Tournament extends \Database\Base {
     }
     
     public function isPublic() {
-        if ($this->public == 1) return '<img class="icon" src="//static.scumscyb.org/img/yes.png" />';
-        else return '<img class="icon" src="//static.scumscyb.org/img/none.png" />';
+        if ($this->public == 1) return '<img class="icon" src="/img/yes.png" />';
+        else return '<img class="icon" src="/img/none.png" />';
     }
     
     public function getPlayers() {

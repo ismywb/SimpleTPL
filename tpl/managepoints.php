@@ -47,7 +47,7 @@ try {
       $data2 = \Points\Points::LoadBy(array("cid"=>$cat->id));
  //\Tournaments\Round::_LoadBySQL("select * from pointrows where cid = '".$cat->id."'");
     } catch (\Exceptions\ItemNotFound $e) {}
-    $delete = '<a href="/managepoints.html?id='.$cat->id.'&flag=delcat"><img src="//static.scumscyb.org/img/redminus.png" class="icon" /></a>';
+    $delete = '<a href="/managepoints.html?id='.$cat->id.'&flag=delcat"><img src="/img/redminus.png" class="icon" /></a>';
     if (count($data2) > 0) $delete = '';
     $tpl .= "<h1>{$delete}{$cat->name}</h1>";
     if (count($data2) >0) {
@@ -64,7 +64,7 @@ try {
 end;
     foreach ($data2 as $row) {
       $tpl .= '    <tr><td><center>
-<a href="/managepoints.html?id='.$row->id.'&flag=del"><img src="//static.scumscyb.org/img/redminus.png" class="icon" /></a></center></td>
+<a href="/managepoints.html?id='.$row->id.'&flag=del"><img src="/img/redminus.png" class="icon" /></a></center></td>
       <td scope="row">'.$row->name.'</td>
       <td>'.$row->info.'</td>
     </tr>';

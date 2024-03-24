@@ -147,6 +147,7 @@ $__output = $tpl;
 }
 
 if ($_REQUEST['flag'] == 'removeT') {
+lRequired(5);
     try {
         $tourn = new \Tournaments\Tournament($_REQUEST['tid']);
         $id = $tourn->id;

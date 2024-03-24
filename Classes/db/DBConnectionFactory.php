@@ -12,7 +12,7 @@ function loadDBConfig() {
 	$dbInfo['host'] = 'localhost';//$numArray[0];
 	$dbInfo['user'] = 'app';//$numArray[1];
 	$dbInfo['pass'] = 'Jerald12';//$numArray[2];
-	$dbInfo['schema'] = 'db'; //$numArray[3];
+	$dbInfo['schema'] = ADB; //'db'; //$numArray[3];
 	return $dbInfo;
 }
 

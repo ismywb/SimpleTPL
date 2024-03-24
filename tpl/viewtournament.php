@@ -44,29 +44,29 @@ $tpl .= <<<end
     <tbody>
 end;
 if ($match->is_crew_win == 1) {
-    $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></td>';
+    $tpl .= '      <td scope="col"><img src="/img/yes.png" class="icon" /></td>';
     if ($match->is_task_win == 1) {
-        $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><img src="/img/yes.png" class="icon" /></td>';
     } else {
-        $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/none.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><img src="/img/none.png" class="icon" /></td>';
     }
 } else {
-        $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/none.png" class="icon" /></td><td><img src="//static.scumscyb.org/img/none.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><img src="/img/none.png" class="icon" /></td><td><img src="/img/none.png" class="icon" /></td>';
 }
 if ($match->is_crew_win == 0) {
-    $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></td>';
+    $tpl .= '      <td scope="col"><img src="/img/yes.png" class="icon" /></td>';
     if ($match->is_sabo_win == 1) {
-        $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><img src="/img/yes.png" class="icon" /></td>';
     } else {
-        $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/none.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><img src="/img/none.png" class="icon" /></td>';
     }
 } else {
-        $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/none.png" class="icon" /></td><td><img src="//static.scumscyb.org/img/none.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><img src="/img/none.png" class="icon" /></td><td><img src="/img/none.png" class="icon" /></td>';
 }
 if ($match->is_crew_win == 2) {
-    $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></td>';
+    $tpl .= '      <td scope="col"><img src="/img/yes.png" class="icon" /></td>';
 } else {
-        $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/none.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><img src="/img/none.png" class="icon" /></td>';
 }
 $tpl .= '</tr></table>';
 $tpl .= <<<end
@@ -167,7 +167,7 @@ $tpl .= <<<end
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">
     <li class="page-item {$pdisable}">
-      <a class="page-link" href="/viewtournament.html?tid={$_REQUEST['tid']}&round={$pround}" tabindex="-1">Previous</a>
+      <a class="page-link" href="./viewtournament.html?tid={$_REQUEST['tid']}&round={$pround}" tabindex="-1">Previous</a>
     </li>
 end;
 $num = 1;
@@ -175,7 +175,7 @@ while ($num <= 10) {
     $disabled = '';
     $tid = $_REQUEST['tid'];
     if ($num == $_REQUEST['round'] ) $disabled = 'disabled';
-    $tpl .= "    <li class='page-item {$disabled}'><a class='page-link ' href='/viewtournament.html?tid={$tid}&round={$num}'>{$num}</a></li>\n";
+    $tpl .= "    <li class='page-item {$disabled}'><a class='page-link ' href='./viewtournament.html?tid={$tid}&round={$num}'>{$num}</a></li>\n";
     $num++;
 }
 $nRound = min(10,($_REQUEST['round'] + 1));
@@ -184,7 +184,7 @@ if ($data['round'] == 10) $ndisable = 'disabled';
 
 $tpl .= <<<end
 <li class="page-item {$ndisable}">
-      <a class="page-link " href="/viewtournament.html?tid={$_REQUEST['tid']}&round={$nRound}">Next</a>
+      <a class="page-link " href="./viewtournament.html?tid={$_REQUEST['tid']}&round={$nRound}">Next</a>
     </li>
   </ul>
 </nav>

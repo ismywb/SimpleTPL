@@ -53,29 +53,29 @@ $tpl .= <<<end
     <tbody>
 end;
 if ($match->is_crew_win == 1) {
-    $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></td>';
+    $tpl .= '      <td scope="col"><img src="/img/yes.png" class="icon" /></td>';
     if ($match->is_task_win == 1) {
-        $tpl .= '      <td scope="col"><a href="/modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&taskWin=0&do=win"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></a></td>';
+        $tpl .= '      <td scope="col"><a href="./modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&taskWin=0&do=win"><img src="/img/yes.png" class="icon" /></a></td>';
     } else {
-        $tpl .= '      <td scope="col"><a href="/modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&taskWin=1&do=win"><img src="//static.scumscyb.org/img/none.png" class="icon" /></a></td>';
+        $tpl .= '      <td scope="col"><a href="./modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&taskWin=1&do=win"><img src="/img/none.png" class="icon" /></a></td>';
     }
 } else {
-        $tpl .= '      <td scope="col"><a href="/modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&crewWin=1&do=win"><img src="//static.scumscyb.org/img/none.png" class="icon" /></a></td><td><img src="//static.scumscyb.org/img/none.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><a href="./modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&crewWin=1&do=win"><img src="/img/none.png" class="icon" /></a></td><td><img src="/img/none.png" class="icon" /></td>';
 }
 if ($match->is_crew_win == 0) {
-    $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></td>';
+    $tpl .= '      <td scope="col"><img src="/img/yes.png" class="icon" /></td>';
     if ($match->is_sabo_win == 1) {
-        $tpl .= '      <td scope="col"><a href="/modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&saboWin=0&do=win"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></a></td>';
+        $tpl .= '      <td scope="col"><a href="./modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&saboWin=0&do=win"><img src="/img/yes.png" class="icon" /></a></td>';
     } else {
-        $tpl .= '      <td scope="col"><a href="/modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&saboWin=1&do=win"><img src="//static.scumscyb.org/img/none.png" class="icon" /></a></td>';
+        $tpl .= '      <td scope="col"><a href="./modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&saboWin=1&do=win"><img src="/img/none.png" class="icon" /></a></td>';
     }
 } else {
-        $tpl .= '      <td scope="col"><a href="/modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&crewWin=0&do=win"><img src="//static.scumscyb.org/img/none.png" class="icon" /></a></td><td><img src="//static.scumscyb.org/img/none.png" class="icon" /></td>';
+        $tpl .= '      <td scope="col"><a href="./modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&crewWin=0&do=win"><img src="/img/none.png" class="icon" /></a></td><td><img src="/img/none.png" class="icon" /></td>';
 }
 if ($match->is_crew_win == 2) {
-    $tpl .= '      <td scope="col"><img src="//static.scumscyb.org/img/yes.png" class="icon" /></td>';
+    $tpl .= '      <td scope="col"><img src="/img/yes.png" class="icon" /></td>';
 } else {
-        $tpl .= '      <td scope="col"><a href="/modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&crewWin=2&do=win"><img src="//static.scumscyb.org/img/none.png" class="icon" /></a></td>';
+        $tpl .= '      <td scope="col"><a href="./modify.html?tid='.$_REQUEST['tid'].'&round='.$_REQUEST['round'].'&crewWin=2&do=win"><img src="/img/none.png" class="icon" /></a></td>';
 }
 $tpl .= '</tr></table>';
 $tpl .= <<<end
@@ -133,17 +133,17 @@ end;
     $tpl .= <<<end
 
     <tr class="is-{$class}	" style="background-color: {$role["hex"]} !important;">
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&flag=remove&pid={$r->player_id->id}&confirm=0&round={$_REQUEST['round']}"><img src="//static.scumscyb.org/img/redminus.png" class="icon" /></a> ${i}.</td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&flag=remove&pid={$r->player_id->id}&confirm=0&round={$_REQUEST['round']}"><img src="/img/redminus.png" class="icon" /></a> ${i}.</td>
       <td scope="col">{$drop}</td>
       <td scope="col">{$r->player_id->name}</td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=kills&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/minus.png" /></a>&nbsp;{$r->kills}&nbsp;<a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=kills&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/plus.png" /></a></td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=ieject&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/minus.png" /></a>&nbsp;{$r->imp_eject}&nbsp;<a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=ieject&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/plus.png" /></a></td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=ivote&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/minus.png" /></a>&nbsp;{$r->imp_vote}&nbsp;<a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=ivote&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/plus.png" /></a></td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=ceject&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/minus.png" /></a>&nbsp;{$r->crew_eject}&nbsp;<a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=ceject&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/plus.png" /></a></td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=cvote&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/minus.png" /></a>&nbsp;{$r->crew_vote}&nbsp;<a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=cvote&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/plus.png" /></a></td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=toggle&flag=iscrew&player={$r->player_id->id}">{$r->isCrew()}</a></td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=toggle&flag=isneutral&player={$r->player_id->id}">{$r->isNeutral()}</a></td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=extrapoints&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/minus.png" /></a>&nbsp;{$r->extra_points}&nbsp;<a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=extrapoints&player={$r->player_id->id}"><img class='icon' src="//static.scumscyb.org/img/plus.png" /></a><br /><code style=" background-color: black; color:  white; ">{$r->extra_points_why}</code>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=kills&player={$r->player_id->id}"><img class='icon' src="/img/minus.png" /></a>&nbsp;{$r->kills}&nbsp;<a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=kills&player={$r->player_id->id}"><img class='icon' src="/img/plus.png" /></a></td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=ieject&player={$r->player_id->id}"><img class='icon' src="/img/minus.png" /></a>&nbsp;{$r->imp_eject}&nbsp;<a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=ieject&player={$r->player_id->id}"><img class='icon' src="/img/plus.png" /></a></td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=ivote&player={$r->player_id->id}"><img class='icon' src="/img/minus.png" /></a>&nbsp;{$r->imp_vote}&nbsp;<a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=ivote&player={$r->player_id->id}"><img class='icon' src="/img/plus.png" /></a></td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=ceject&player={$r->player_id->id}"><img class='icon' src="/img/minus.png" /></a>&nbsp;{$r->crew_eject}&nbsp;<a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=ceject&player={$r->player_id->id}"><img class='icon' src="/img/plus.png" /></a></td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=cvote&player={$r->player_id->id}"><img class='icon' src="/img/minus.png" /></a>&nbsp;{$r->crew_vote}&nbsp;<a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=cvote&player={$r->player_id->id}"><img class='icon' src="/img/plus.png" /></a></td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=toggle&flag=iscrew&player={$r->player_id->id}">{$r->isCrew()}</a></td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=toggle&flag=isneutral&player={$r->player_id->id}">{$r->isNeutral()}</a></td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=minus&flag=extrapoints&player={$r->player_id->id}"><img class='icon' src="/img/minus.png" /></a>&nbsp;{$r->extra_points}&nbsp;<a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=plus&flag=extrapoints&player={$r->player_id->id}"><img class='icon' src="/img/plus.png" /></a><br /><code style=" background-color: black; color:  white; ">{$r->extra_points_why}</code>
 
       <p>
   <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample{$r->player_id->id}" role="button" aria-expanded="false" aria-controls="collapseExample{$r->player_id->id}">
@@ -155,7 +155,7 @@ end;
   <input type="hidden" name="do" value="editnote" /><input type="text" name="why" value="{$r->extra_points_why}" /></form>
     </div>
 </div></td>
-      <td scope="col"><a href="/modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=toggle&flag=tdone&player={$r->player_id->id}">{$r->tasksDone()}</a></td>
+      <td scope="col"><a href="./modify.html?tid={$_REQUEST['tid']}&round={$_REQUEST['round']}&do=toggle&flag=tdone&player={$r->player_id->id}">{$r->tasksDone()}</a></td>
       <td scope="col">{$r->getPoints($data['game_id'],$data['round'])}</td>
       <td scope="col">{$game->getFinalPoints($r->player_id->id,$data['round'])}</td>
     </tr>

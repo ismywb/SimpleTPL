@@ -9,24 +9,30 @@ $nav = <<<end
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="./">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="points.html">Point Rules</a>
+            <a class="nav-link" href="./points.html">Point Rules</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="podium.html">Podium</a>
+            <a class="nav-link" href="./podium.html">Podium</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="alltime.html">All Time Stats</a>
+            <a class="nav-link" href="./alltime.html">All Time Stats</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="viewT.html">View Tournaments</a>
+            <a class="nav-link" href="./viewT.html">View Tournaments</a>
           </li>
 
 
 end;
 if (\Login\User::isLoggedIn()) {
+$adminLinks = "";
+if (\Login\User::getCurrent()->user_level > 1) {
+  $adminLinks .= '            <a class="dropdown-item" href="./manageU.html">Manage Users</a>';
+  if (\Login\User::getCurrent()->user_level == 10) $adminLinks .= '           <a class="dropdown-item" href="./newuser.html">Create Admin</a>';
+}
+
 $nav .= <<<end
 
       <li class="nav-item dropdown">
@@ -34,21 +40,22 @@ $nav .= <<<end
           Map Rotation Generator
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/mapRotation.html">Generate Rotation</a>
-          <a class="dropdown-item" href="/mapRotation.html?sub=true">Generate Rotation (w/ Submerged)</a>
+          <a class="dropdown-item" href="./mapRotation.html">Generate Rotation</a>
+          <a class="dropdown-item" href="./mapRotation.html?sub=true">Generate Rotation (w/ Submerged)</a>
+          <a class="dropdown-item" href="./mapRotation.html?fun=true">Generate Rotation (w/ Fungle)</a>
         </div>
       </li>
    
              <li class="nav-item">
-            <a class="nav-link" href="manageT.html">Manage Tournaments</a>
+            <a class="nav-link" href="./manageT.html">Manage Tournaments</a>
           </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Player Management
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/newplayer.html">Add Player</a>
-          <a class="dropdown-item" href="/addWin.html">Record Win</a>
+          <a class="dropdown-item" href="./newplayer.html">Add Player</a>
+          <a class="dropdown-item" href="./addWin.html">Record Win</a>
         </div>
       </li>
            
@@ -58,8 +65,9 @@ $nav .= <<<end
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
 
-            <a class="dropdown-item" href="changePass.html">Change Password</a>
-            <a class="dropdown-item" href="logout.html">Logout</a>
+            <a class="dropdown-item" href="./changePass.html">Change Password</a>
+            <a class="dropdown-item" href="./logout.html">Logout</a>
+            {$adminLinks}
             </div>
           </li>
 
@@ -68,20 +76,22 @@ $nav .= <<<end
           Mod Management
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/createMod.html">Create ModPack</a>
-          <a class="dropdown-item" href="/createRole.html">Create Role</a>
-          <a class="dropdown-item" href="/viewModPacks.html">View ModPacks</a>
-          <a class="dropdown-item" href="/managepoints.html">Manage Points</a>
+          <a class="dropdown-item" href="./createMod.html">Create ModPack</a>
+          <a class="dropdown-item" href="./createRole.html">Create Role</a>
+          <a class="dropdown-item" href="./viewModPacks.html">View ModPacks</a>
+          <a class="dropdown-item" href="./managepoints.html">Manage Points</a>
         </div>
       </li>
 
 end;
 } else {
+if (ADB != "db2") {
    $nav .= <<<end
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="./login.html">Login</a>
           </li>
 end; 
+}
 }
 
 $nav .= <<<end
